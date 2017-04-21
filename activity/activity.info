@@ -1,0 +1,8 @@
+[Activity]
+name = Countries
+activity_version = 33
+host_version = 1
+bundle_id = mulawa.Countries
+icon = activity
+show_launcher = yes
+exec = sugar-activity activity.PeterActivity

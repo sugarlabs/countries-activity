@@ -1,0 +1,125 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#00ff03">
+	<!ENTITY fill_color "#ff0000">
+]><!--Generator: Xara Xtreme (www.xara.com), SVG filter version: 1.0.0.13--><svg fill-rule="evenodd" height="41.25pt" overflow="visible" stroke-linejoin="bevel" stroke-width="0.501" version="1.1" viewBox="0 0 41.25 41.25" width="41.25pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="DefaultArrow2" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_STRAIGHT (-2) -->
+   <g transform="scale(0.0092592592)">
+    <!-- 1/108 -->
+    <path d="M -9 54 L -9 -54 L 117 0 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow3" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_ANGLED -->
+   <g transform="scale(0.0092592592)">
+    <path d="M -27 54 L -9 0 L -27 -54 L 135 0 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow4" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_ROUNDED -->
+   <g transform="scale(0.0092592592)">
+    <path d="M -9,0 L -9,-45 C -9,-51.708 2.808,-56.580 9,-54 L 117,-9 C 120.916,-7.369 126.000,-4.242 126,0 C 126,4.242 120.916,7.369 117,9 L 9,54 C 2.808,56.580 -9,51.708 -9,45 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow5" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_SPOT -->
+   <g transform="scale(0.0092592592)">
+    <path d="M -54, 0 C -54,29.807 -29.807,54 0,54 C 29.807,54 54,29.807 54,0 C 54,-29.807 29.807,-54 0,-54 C -29.807,-54 -54,-29.807 -54,0 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow6" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_DIAMOND -->
+   <g transform="scale(0.0092592592)">
+    <path d="M -63,0 L 0,63 L 63,0 L 0,-63 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow7" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_FEATHER -->
+   <g transform="scale(0.0092592592)">
+    <path d="M 18,-54 L 108,-54 L 63,0 L 108,54 L 18, 54 L -36,0 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow8" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_FEATHER2 -->
+   <g transform="scale(0.0092592592)">
+    <path d="M -36,0 L 18,-54 L 54,-54 L 18,-18 L 27,-18 L 63,-54 L 99,-54 L 63,-18 L 72,-18 L 108,-54 L 144,-54 L 90,0 L 144,54 L 108,54 L 72,18 L 63,18 L 99,54 L 63,54 L 27,18 L 18,18 L 54,54 L 18,54 z"/>
+   </g>
+  </marker>
+  <marker id="DefaultArrow9" markerHeight="1" markerUnits="strokeWidth" markerWidth="1" orient="auto" overflow="visible" viewBox="0 0 1 1">
+   <!-- REF_ARROW_HOLLOWDIAMOND -->
+   <g transform="scale(0.0092592592)">
+    <path d="M 0,45 L -45,0 L 0, -45 L 45, 0 z M 0, 63 L-63, 0 L 0, -63 L 63, 0 z"/>
+   </g>
+  </marker>
+  <filter id="StainedFilter">
+   <feBlend in="SourceGraphic" in2="BackgroundImage" mode="multiply" result="blend"/>
+   <feComposite in="blend" in2="SourceAlpha" operator="in" result="comp"/>
+  </filter>
+  <filter id="BleachFilter">
+   <feBlend in="SourceGraphic" in2="BackgroundImage" mode="screen" result="blend"/>
+   <feComposite in="blend" in2="SourceAlpha" operator="in" result="comp"/>
+  </filter>
+  <filter id="InvertTransparencyBitmapFilter">
+   <feComponentTransfer>
+    <feFuncR amplitude="1.055" exponent=".416666666" offset="-0.055" type="gamma"/>
+    <feFuncG amplitude="1.055" exponent=".416666666" offset="-0.055" type="gamma"/>
+    <feFuncB amplitude="1.055" exponent=".416666666" offset="-0.055" type="gamma"/>
+   </feComponentTransfer>
+   <feComponentTransfer>
+    <feFuncR intercept="1" slope="-1" type="linear"/>
+    <feFuncG intercept="1" slope="-1" type="linear"/>
+    <feFuncB intercept="1" slope="-1" type="linear"/>
+    <feFuncA intercept="0" slope="1" type="linear"/>
+   </feComponentTransfer>
+   <feComponentTransfer>
+    <feFuncR amplitude="1" exponent="2.4" offset="0" type="gamma"/>
+    <feFuncG amplitude="1" exponent="2.4" offset="0" type="gamma"/>
+    <feFuncB amplitude="1" exponent="2.4" offset="0" type="gamma"/>
+   </feComponentTransfer>
+  </filter>
+ </defs>
+ <g fill="none" font-family="Times New Roman" font-size="16" id="Document" stroke="black" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -41.25)">
+   <g id="Layer 1"/>
+   <g id="Clipart">
+    <g id="Group">
+     <path d="M 34.984,35.122 C 26.994,43.129 14.041,43.129 6.053,35.122 C -1.936,27.116 -1.936,14.134 6.053,6.128 C 14.041,-1.878 26.994,-1.878 34.984,6.128 C 42.972,14.134 42.972,27.116 34.984,35.122 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 1.374,25.604 C 1.374,27.814 3.461,31.618 5.348,31.118 C 8.304,30.335 8.516,26.063 12.074,26.063 C 17.903,26.063 26.079,19.535 26.079,13.856 C 26.079,10.057 26.629,2.922 23.23,0.634 C 21.549,-0.497 13.602,0.481 8.252,4.158 C 0.305,9.979 1.374,19.924 1.374,25.604 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 14.611,14.425 C 14.378,14.389 14.141,14.301 13.959,14.149 C 13.833,14.044 13.713,13.9 13.686,13.737 C 13.585,13.167 13.535,12.181 14.097,12.053 C 14.255,12.016 14.361,12.274 14.406,12.429 C 14.483,12.696 14.238,12.985 14.303,13.255 C 14.364,13.512 14.615,13.68 14.748,13.908 C 14.84,14.063 15.075,14.233 14.989,14.391 C 14.928,14.499 14.735,14.444 14.611,14.425 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 34.541,28.361 C 36.14,27.38 36.644,24.405 38.056,22.386 C 38.87,21.224 41.17,21.236 41.113,19.935 C 40.96,16.412 39.667,12.366 38.209,9.979 C 36.451,7.093 31.942,1.4 23.994,0.481 C 21.471,-0.146 23.609,2.444 25.101,7.559 C 23.068,12.981 21.83,18.738 24.869,23.724 C 27.909,28.709 29.707,31.321 34.541,28.361 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 31.161,18.046 C 31.253,18.264 31.3,18.513 31.268,18.746 C 31.243,18.909 31.182,19.087 31.06,19.196 C 30.626,19.577 29.812,20.136 29.411,19.723 C 29.296,19.606 29.461,19.38 29.571,19.262 C 29.759,19.057 30.131,19.114 30.328,18.919 C 30.513,18.733 30.527,18.429 30.651,18.197 C 30.735,18.038 30.756,17.749 30.935,17.741 C 31.062,17.735 31.113,17.929 31.161,18.046 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 30.786,7.519 L 29.703,5.738 L 29.504,5.145 L 29.308,4.749 L 29.801,3.959 L 30.59,4.552 L 31.182,6.728 L 30.786,7.519 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 15.599,30.254 L 16.091,30.254 L 14.809,28.278 L 14.611,27.488 L 14.02,28.081 L 13.329,27.488 L 13.526,29.267 L 14.71,29.267 L 15.599,30.254 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 3.959,32.232 L 7.016,34.407 L 4.389,32.825 L 4.254,33.023 L 9.087,35.989 L 10.568,36.186 L 11.888,35.631 L 13.033,35.989 L 3.959,32.232 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 10.765,28.476 L 11.751,28.672 L 12.935,29.069 L 12.738,27.685 L 11.947,26.103 L 11.947,25.509 L 11.357,25.115 L 10.962,24.125 L 10.568,25.115 L 11.158,25.312 L 10.369,26.3 L 10.765,28.476 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 10.369,26.103 L 9.976,25.312 L 10.173,24.719 L 9.187,25.312 L 8.988,25.906 L 8.002,26.3 L 6.82,25.707 L 5.635,26.5 L 4.55,25.509 L 5.142,26.697 L 5.241,28.081 L 4.846,28.278 L 5.043,29.463 L 10.369,26.103 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 5.043,29.267 L 4.55,29.86 L 3.761,29.662 L 3.071,28.872 L 2.379,29.86 L 4.007,32.232 L 10.962,35.593 L 14.513,35.001 L 10.369,28.672 L 11.455,27.488 L 9.68,25.906 L 6.227,27.882 L 5.043,29.267 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 16.781,32.627 L 17.373,32.035 L 15.696,31.244 L 15.795,32.035 L 16.781,32.627 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 20.529,35.395 L 21.22,35.395 L 21.713,35.199 L 21.91,35.593 L 23.587,36.186 L 24.08,35.593 L 25.166,36.186 L 26.545,36.383 L 25.955,35.395 L 24.573,35.395 L 25.462,34.802 L 26.448,33.814 L 27.829,33.616 L 27.926,33.814 L 28.914,34.211 L 31.281,33.418 L 31.281,33.023 L 32.661,32.43 L 33.253,32.43 L 33.45,32.035 L 32.957,31.836 L 33.156,30.453 L 33.352,30.848 L 33.845,30.453 L 34.93,30.453 L 35.72,29.86 L 36.805,28.476 L 37.198,27.091 L 37.594,26.103 L 37.001,26.3 L 37.397,25.312 L 38.383,25.509 L 39.172,24.521 L 39.172,23.137 L 38.186,22.544 L 38.876,21.753 L 39.961,21.753 L 40.454,21.161 L 39.172,21.161 L 37.494,22.346 L 37.101,22.346 L 36.902,21.951 L 36.509,22.346 L 35.324,21.951 L 35.324,21.556 L 35.028,21.161 L 35.324,19.974 L 35.227,18.589 L 35.72,17.798 L 35.62,16.614 L 34.338,17.205 L 33.45,17.998 L 31.478,17.998 L 30.689,17.404 L 29.703,17.205 L 29.111,16.81 L 28.123,17.205 L 29.012,16.217 L 29.997,16.81 L 30.689,16.414 L 30.393,15.229 L 29.604,13.647 L 28.322,12.659 L 27.533,13.647 L 26.744,14.635 L 26.448,14.635 L 25.955,15.229 L 25.066,15.623 L 26.052,14.438 L 26.448,13.845 L 27.237,12.856 L 28.419,12.263 L 29.997,13.054 L 29.9,11.472 L 27.926,8.112 L 28.222,7.122 L 28.519,6.331 L 28.123,5.343 L 26.941,4.355 L 27.04,3.365 L 26.545,2.971 L 26.448,2.575 L 25.362,1.783 L 25.166,1.389 L 22.6,0.796 L 21.811,1.783 L 21.417,1.982 L 20.233,4.355 L 20.725,5.54 L 20.233,7.122 L 19.74,7.321 L 19.347,8.112 L 19.839,8.703 L 18.556,9.297 L 18.359,9.693 L 16.98,9.494 L 15.106,9.891 L 13.822,11.075 L 13.822,11.275 L 13.329,12.066 L 13.329,12.461 L 13.724,14.438 L 14.611,15.426 L 15.795,16.019 L 16.485,17.008 L 17.373,16.81 L 18.163,17.205 L 19.936,17.205 L 20.135,17.008 L 20.036,16.414 L 22.007,15.623 L 22.107,16.019 L 22.6,16.217 L 23.981,16.019 L 24.377,16.217 L 24.869,16.217 L 24.967,17.404 L 23.389,17.205 L 23.192,17.798 L 22.403,17.205 L 20.825,18.986 L 20.529,18.786 L 21.515,17.998 L 21.022,17.404 L 20.924,17.998 L 19.839,18.786 L 24.77,22.544 L 29.703,30.453 L 23.784,34.211 L 20.529,35.395 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 4.254,21.951 L 3.663,22.742 L 3.761,25.312 L 3.367,25.906" fill="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 40.849,20.962 L 39.172,20.171 L 40.651,19.777 L 40.849,20.962 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 18.063,22.346 L 18.187,22.05 L 18.438,21.594 L 18.575,21.161 L 17.826,20.725 L 18.042,21.121 L 17.826,21.199 L 17.845,21.556 L 18.004,21.753 L 17.786,22.266 L 18.063,22.346 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 18.254,21.628 L 18.294,21.535 L 18.373,21.389 L 18.417,21.251 L 18.18,21.113 L 18.248,21.24 L 18.18,21.264 L 18.185,21.377 L 18.235,21.44 L 18.166,21.602 L 18.254,21.628 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 17.312,21.475 L 17.253,21.278 L 17.274,21 L 17.156,20.765 L 17.49,20.803 L 17.708,21.04 L 17.649,21.318 L 17.57,21.634 L 17.312,21.475 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 17.45,21.274 L 17.421,21.18 L 17.431,21.049 L 17.375,20.937 L 17.534,20.956 L 17.635,21.068 L 17.608,21.199 L 17.57,21.348 L 17.45,21.274 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 17.274,29.463 L 18.459,29.267 L 19.148,28.081 L 17.373,25.707 L 16.288,25.906 L 15.4,25.906 L 14.118,25.312 L 15.302,27.488 L 16.485,28.278 L 17.274,29.463 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 15.872,27.045 C 15.683,27.164 15.417,26.672 15.522,26.476 C 15.629,26.277 16.017,26.319 16.198,26.455 C 16.288,26.523 16.382,26.721 16.286,26.783 L 15.872,27.045 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+     <path d="M 24.229,20.035 L 19.74,18.786 L 18.952,18.589 L 17.866,17.404 L 16.288,17.404 L 16.288,17.798 L 16.584,18.986 L 17.67,18.786 L 18.163,19.183 L 17.767,19.974 L 19.839,21.358 L 19.839,21.951 L 20.074,21.911 L 20.036,21.358 L 21.614,21.753 L 21.91,22.346 L 21.91,22.544 L 22.304,22.94 L 21.417,22.742 L 21.318,23.335 L 21.91,24.324 L 21.614,24.324 L 20.924,22.94 L 21.121,22.544 L 20.725,21.951 L 20.332,22.742 L 19.543,22.149 L 19.443,23.137 L 20.233,23.928 L 20.924,25.312 L 21.22,25.707 L 22.798,25.312 L 22.798,24.521 L 23.882,26.3 L 23.192,26.5 L 23.093,27.488 L 23.192,28.081 L 23.587,26.893 L 24.377,26.893 L 23.981,27.488 L 24.277,28.476 L 23.587,29.86 L 24.377,30.651 L 24.377,31.836 L 24.08,32.43 L 23.389,33.22 L 22.403,34.211 L 21.417,34.407 L 21.121,35.001 L 20.725,35.199 L 23.784,35.001 L 28.222,32.43 L 32.464,27.882 L 24.229,20.035 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 25.166,15.266 L 24.82,16.217 L 24.919,17.404 L 23.341,17.205 L 23.142,17.798 L 22.353,17.205 L 20.878,18.913 L 20.479,18.786 L 21.467,17.996 L 20.959,17.385 L 20.875,17.996 L 19.789,18.786 L 24.72,22.544 L 30.542,29.525 L 23.735,34.209 L 20.479,35.395 L 21.171,35.395 L 21.664,35.199 L 21.86,35.593 L 23.538,36.186 L 24.031,35.593 L 25.116,36.186 L 26.497,36.383 L 25.905,35.395 L 24.524,35.395 L 25.412,34.802 L 26.398,33.814 L 27.779,33.616 L 27.877,33.814 L 28.864,34.209 L 31.232,33.418 L 31.232,33.023 L 32.613,32.43 L 33.203,32.43 L 33.402,32.035 L 32.907,31.836 L 33.106,30.453 L 33.303,30.848 L 33.796,30.453 L 34.881,30.453 L 35.67,29.86 L 36.755,28.476 L 37.149,27.091 L 37.544,26.103 L 36.952,26.3 L 37.347,25.312 L 38.333,25.509 L 39.122,24.521 L 39.122,23.137 L 38.136,22.544 L 38.826,21.753 L 39.911,21.753 L 40.404,21.159 L 39.122,21.159 L 37.445,22.346 L 37.051,22.346 L 36.854,21.951 L 36.459,22.346 L 35.276,21.951 L 35.276,21.556 L 34.98,21.159 L 35.276,19.974 L 35.177,18.589 L 35.67,17.798 L 35.57,16.614 L 34.288,17.205 L 33.402,17.996 L 31.428,17.996 L 30.639,17.404 L 29.653,17.205 L 29.061,16.81 L 28.075,17.205 L 28.962,16.217 L 29.95,16.81 L 30.639,16.414 L 30.343,15.229 L 29.554,13.647 L 28.272,12.657 L 27.483,13.647 L 26.694,14.635 L 26.398,14.635 L 25.905,15.229 L 25.611,15.587 L 25.473,15.748 L 25.166,15.266 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 24.761,16.054 L 25.964,14.496 L 26.36,13.902 L 27.149,12.914 L 28.331,12.32 L 29.91,13.111 L 29.812,11.529 L 27.838,8.167 L 28.135,7.179 L 28.431,6.388 L 28.035,5.4 L 26.853,4.413 L 26.95,3.423 L 26.457,3.028 L 26.36,2.632 L 25.275,1.841 L 25.076,1.446 L 22.512,0.853 L 21.723,1.841 L 21.329,2.038 L 20.145,4.413 L 20.638,5.597 L 20.145,7.179 L 19.652,7.376 L 19.257,8.167 L 19.749,8.761 L 18.468,9.355 L 18.271,9.749 L 16.89,9.552 L 15.016,9.948 L 13.734,11.134 L 13.734,11.332 L 13.241,12.123 L 13.241,12.518 L 13.636,14.496 L 14.523,15.483 L 15.707,16.077 L 16.397,17.066 L 17.286,16.868 L 18.075,17.262 L 19.849,17.262 L 20.045,17.066 L 19.948,16.471 L 21.92,15.681 L 22.019,16.077 L 22.512,16.275 L 23.893,16.077 L 24.287,16.275 L 24.761,16.054 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 23.234,10.149 L 23.068,10.226 L 23.043,10.276 L 22.863,10.251 L 22.621,10.303 L 22.455,10.455 L 22.455,10.48 L 22.391,10.583 L 22.391,10.635 L 22.443,10.89 L 22.558,11.018 L 22.711,11.094 L 22.8,11.223 L 22.915,11.199 L 23.016,11.248 L 23.247,11.248 L 23.272,11.223 L 23.259,11.147 L 23.515,11.045 L 23.528,11.094 L 23.591,11.122 L 23.771,11.094 L 23.822,11.122 L 23.884,11.093 L 24.038,10.89 L 24.09,10.814 L 24.191,10.686 L 24.344,10.608 L 24.548,10.712 L 24.537,10.507 L 24.281,10.07 L 23.234,10.149 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 27.844,8.127 L 28.14,7.139 L 28.436,6.348 L 28.041,5.36 L 26.858,4.371 L 26.956,3.382 L 26.463,2.988 L 26.365,2.592 L 25.28,1.801 L 25.083,1.406 L 22.518,0.813 L 21.729,1.801 L 21.335,1.997 L 20.15,4.371 L 20.643,5.557 L 20.15,7.139 L 19.657,7.336 L 19.263,8.127 L 19.768,8.648 L 27.844,8.127 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 24.946,6.163 L 25.015,5.931 L 25.083,5.745 L 24.992,5.513 L 24.715,5.282 L 24.738,5.05 L 24.621,4.958 L 24.598,4.865 L 24.344,4.68 L 24.298,4.587 L 23.696,4.449 L 23.513,4.68 L 23.419,4.726 L 23.142,5.282 L 23.259,5.559 L 23.142,5.931 L 23.028,5.977 L 22.934,6.163 L 23.053,6.283 L 24.946,6.163 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 19.789,18.786 L 24.72,22.544 L 30.542,29.525 L 23.735,34.209 L 20.479,35.395 L 21.171,35.395 L 21.664,35.199 L 21.86,35.593 L 23.538,36.186 L 24.031,35.593 L 25.116,36.186 L 26.497,36.383 L 25.905,35.395 L 24.524,35.395 L 25.412,34.802 L 26.398,33.814 L 27.779,33.616 L 27.877,33.814 L 28.864,34.209 L 31.232,33.418 L 31.232,33.023 L 32.613,32.43 L 33.203,32.43 L 33.402,32.033 L 32.907,31.836 L 33.106,30.451 L 33.303,30.848 L 33.796,30.451 L 34.881,30.451 L 35.67,29.86 L 36.755,28.476 L 37.149,27.091 L 37.544,26.103 L 36.952,26.3 L 37.347,25.312 L 38.333,25.509 L 39.122,24.521 L 39.122,23.137 L 38.136,22.544 L 38.826,21.753 L 39.911,21.753 L 40.404,21.159 L 39.122,21.159 L 37.445,22.346 L 37.051,22.346 L 36.854,21.949 L 36.459,22.346 L 35.276,21.949 L 35.276,21.556 L 34.783,20.629 L 30.639,17.404 L 29.653,17.205 L 29.061,16.81 L 28.075,17.205 L 24.919,17.404 L 23.341,17.205 L 23.142,17.798 L 22.353,17.205 L 21.7,18.155 L 20.479,18.786 L 19.789,18.786 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 20.51,18.786 L 21.497,17.996 L 21.003,17.404 L 20.867,18.004 L 19.82,18.786 L 20.51,18.786 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 27.905,16.208 L 28.102,15.987 L 28.322,16.12 L 28.475,16.031 L 28.41,15.767 L 28.234,15.417 L 27.949,15.197 L 27.774,15.417 L 27.598,15.635 L 27.533,15.635 L 27.422,15.767 L 27.357,15.847 L 27.326,15.884 L 27.258,15.777 L 27.181,15.987 L 27.204,16.252 L 27.905,16.208 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 31.528,17.996 L 32.319,19.442 L 33.994,20.035 L 35.078,21.159 L 35.374,19.974 L 35.276,18.589 L 35.769,17.798 L 35.67,16.612 L 34.388,17.205 L 33.499,17.996 L 31.528,17.996 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 33.658,18.641 L 34.634,19.51 L 34.716,19.185 L 34.69,18.804 L 34.825,18.586 L 34.799,18.26 L 34.39,18.553 L 34.201,18.641 L 33.658,18.641 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 2.775,29.267 L 2.775,28.476 L 2.379,28.081 L 3.17,26.893 L 2.085,26.3 L 2.085,24.719 L 1.493,24.125 L 1.394,23.137 L 1.69,21.951 L 2.578,21.161 L 2.183,20.37 L 2.676,20.765 L 3.761,18.986 L 4.156,16.614 L 4.55,16.019 L 4.945,14.438 L 4.156,14.241 L 5.339,13.251 L 6.031,12.066 L 7.805,10.285 L 7.706,9.494 L 7.116,9.494 L 6.82,8.703 L 6.227,7.715 L 5.398,6.804 C 1.394,11.115 -0.085,17.008 0.012,21.358 L 0.605,21.161 L 1,21.753 L 0.901,23.73 L 1.296,24.916 L 1.296,25.312 L 1.493,27.488 L 1.862,29.143 L 2.775,29.267 Z" fill="&fill_color;" marker-end="none" marker-start="none" stroke="&fill_color;" stroke-miterlimit="79.8403193612775" stroke-width="0.047"/>
+     <path d="M 35.137,35.122 C 27.147,43.129 14.194,43.129 6.206,35.122 C -1.784,27.116 -1.784,14.134 6.206,6.128 C 14.194,-1.878 27.147,-1.878 35.137,6.128 C 43.125,14.134 43.125,27.116 35.137,35.122 Z" marker-end="none" marker-start="none" stroke="#000000" stroke-miterlimit="79.8403193612775" stroke-width="0.246"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
