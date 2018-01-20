@@ -12,6 +12,7 @@ import sugargame.canvas
 import load_save
 import Countries
 
+
 class PeterActivity(activity.Activity):
     def __init__(self, handle):
         super(PeterActivity, self).__init__(handle)
@@ -34,7 +35,7 @@ class PeterActivity(activity.Activity):
         # Note that set_canvas implicitly calls
         # read_file when resuming from the Journal.
         self.set_canvas(self._pygamecanvas)
-        self.game.canvas=self._pygamecanvas
+        self.game.canvas = self._pygamecanvas
 
         # Start the game running.
         self._pygamecanvas.run_pygame(self.game.run)
@@ -42,8 +43,8 @@ class PeterActivity(activity.Activity):
     def read_file(self, file_path):
         try:
             f = open(file_path, 'r')
-        except:
-            return #****
+        except BaseException:
+            return  # ****
         load_save.load(f)
         f.close()
 
