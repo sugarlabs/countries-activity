@@ -15,10 +15,10 @@ import utils
 import sys
 import load_save
 import buttons
-try:
-    import gtk
-except BaseException:
-    pass
+import gi
+gi.require_version('Gtk', '3.0')
+
+from gi.repository import Gtk
 import ctry
 import letter_keys
 import pages
@@ -157,12 +157,19 @@ class Countries:
         while flushing:
             flushing = False
             if self.journal:
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
             for event in pygame.event.get():
                 flushing = True
 
     def run(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+            elif event.type == pygame.VIDEORESIZE:
+                pygame.display.set_mode(event.size, pygame.RESIZABLE)
+                break
+
         g.init()
         if not self.journal:
             utils.load()
@@ -179,9 +186,9 @@ class Countries:
         going = True
         while going:
             if self.journal:
-                # Pump GTK messages.
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                # Pump Gtk messages.
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
             # Pump PyGame messages.
             for event in pygame.event.get():
