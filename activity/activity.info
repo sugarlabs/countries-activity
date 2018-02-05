@@ -6,3 +6,5 @@ bundle_id = mulawa.Countries
 icon = activity
 show_launcher = yes
 exec = sugar-activity activity.PeterActivity
+repository = https://github.com/sugarlabs/countries-activity.git
+license = GPLv3+
