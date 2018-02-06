@@ -181,8 +181,6 @@ class Countries:
         if self.canvas is not None:
             self.canvas.grab_focus()
         ctrl = False
-        pygame.key.set_repeat(600, 120)
-        key_ms = pygame.time.get_ticks()
         going = True
         while going:
             if self.journal:
@@ -217,24 +215,22 @@ class Countries:
                         self.ctry.clear()
                 elif event.type == pygame.KEYDOWN:
                     # throttle keyboard repeat
-                    if pygame.time.get_ticks() - key_ms > 110:
-                        self.ctry.message = None
-                        g.pic = g.globe
-                        key_ms = pygame.time.get_ticks()
-                        if ctrl:
-                            if event.key == pygame.K_q:
-                                if not self.journal:
-                                    utils.save()
-                                going = False
-                                break
-                            else:
-                                ctrl = False
-                        if event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
-                            ctrl = True
+                    self.ctry.message = None
+                    g.pic = g.globe
+                    if ctrl:
+                        if event.key == pygame.K_q:
+                            if not self.journal:
+                                utils.save()
+                            going = False
                             break
-                        self.do_key(event.key)
-                        g.redraw = True
-                        self.flush_queue()
+                        else:
+                            ctrl = False
+                    if event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
+                        ctrl = True
+                        break
+                    self.do_key(event.key)
+                    g.redraw = True
+                    self.flush_queue()
                 elif event.type == pygame.KEYUP:
                     ctrl = False
             if not going:
