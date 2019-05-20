@@ -181,7 +181,9 @@ class Countries:
         if self.canvas is not None:
             self.canvas.grab_focus()
         ctrl = False
+        last_click = 0
         going = True
+        double_click_duration = 30 # In milliseconds
         while going:
             if self.journal:
                 # Pump Gtk messages.
@@ -204,13 +206,12 @@ class Countries:
                     self.ctry.message = None
                     g.pic = g.globe
                     if event.button == 1:
-                        if self.do_click():
+                        latest_click = pygame.time.get_ticks()
+                        if latest_click - last_click <= double_click_duration:
                             pass
                         else:
-                            bu = buttons.check()
-                            if bu != '':
-                                self.do_button(bu)
-                        self.flush_queue()
+                            self.button_click()
+                        last_click = latest_click
                     if event.button == 3:
                         self.ctry.clear()
                 elif event.type == pygame.KEYDOWN:
@@ -243,6 +244,15 @@ class Countries:
                 pygame.display.flip()
                 g.redraw = False
             g.clock.tick(40)
+
+    def button_click(self):
+        if self.do_click():
+            pass
+        else:
+            bu = buttons.check()
+            if bu != '':
+                self.do_button(bu)
+        self.flush_queue()
 
 
 if __name__ == "__main__":
