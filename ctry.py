@@ -116,7 +116,7 @@ class Ctry:
         ind = ord(l) - 65
         answer_fix = fix(self.answer)
         value, ans = self.check(answer_fix)
-        if ans is None or value is None:
+        if ans is None or value == -1:
             self.message = 'sorry, ' + self.answer + ' is not in my list'
             return -1
         if value == 0:
@@ -147,12 +147,12 @@ class Ctry:
             similar_count = 0
             if len(ctry_name) != len(ans):
                 continue
-            for i in range(0, len(ctry_name)):
+            for i in range(0, len(ans)):
                 if(ctry_name[i] != ans[i]):
                     similar_count += 1
-            if(similar_count == 1):
+            if(similar_count == 1 or (similar_count == 2 and len(ans)>7) or (similar_count == 3 and len(ans)>14)):
                 return 0, lst[0]
-        return None, None
+        return -1, None
 
     def get_ind(self, ans):
         ind = 0
