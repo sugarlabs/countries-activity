@@ -24,7 +24,6 @@ import letter_keys
 import pages
 import map1
 
-
 class Countries:
 
     def __init__(self):
@@ -87,8 +86,8 @@ class Countries:
             self.pages_on()
             return
         if bu == 'try':
-            self.ctry.try1()
-            return
+            value = self.ctry.try1()
+            return value
         if bu == 'clear':
             self.ctry.clear()
             return
@@ -115,10 +114,10 @@ class Countries:
     def do_key(self, key):
         if key == pygame.K_1:
             g.version_display = not g.version_display
-            return
+            return -1
         if key in g.TICK:
-            self.ctry.try1()
-            return
+            value = self.ctry.try1()
+            return value
         l = None
         if key in (pygame.K_BACKSPACE, pygame.K_DELETE):
             l = '*'
@@ -126,9 +125,11 @@ class Countries:
             l = letter_keys.which(key)
         if l is not None:
             self.ctry.do_letter(l)
-            return
+            return -1 
         if key == pygame.K_F1:
             self.pages_on()
+        
+        return -1
 
     def buttons_setup(self):
         cx1 = g.sx(1.5)
@@ -182,6 +183,7 @@ class Countries:
             self.canvas.grab_focus()
         ctrl = False
         going = True
+        answer_input = False
         while going:
             if self.journal:
                 # Pump Gtk messages.
@@ -204,12 +206,17 @@ class Countries:
                     self.ctry.message = None
                     g.pic = g.globe
                     if event.button == 1:
-                        if self.do_click():
-                            pass
+                        if answer_input == False:
+                            if self.do_click():
+                                pass
+                            else:
+                                bu = buttons.check()
+                                if bu != '':
+                                    value = self.do_button(bu)
+                                    if value == 0:
+                                        answer_input = True
                         else:
-                            bu = buttons.check()
-                            if bu != '':
-                                self.do_button(bu)
+                            pass # Don't accept any other kind of Button Event
                         self.flush_queue()
                     if event.button == 3:
                         self.ctry.clear()
@@ -225,10 +232,27 @@ class Countries:
                             break
                         else:
                             ctrl = False
-                    if event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
-                        ctrl = True
-                        break
-                    self.do_key(event.key)
+                    if answer_input == False:
+                        if event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
+                            ctrl = True
+                            break
+                        value = self.do_key(event.key)
+                        if value == 0:
+                            answer_input = True
+                    else:
+                        if event.key == g.YES: # Value of 'y'
+                            answer_fix = ctry.fix(self.ctry.answer)
+                            value, ans = self.ctry.check(answer_fix)
+                            l = ans[:1]
+                            ind = ord(l) - 65
+                            g.answers[ind] = ans
+                            self.ctry.flag(ans)
+                            ctry.text(l, answer_fix)
+                            self.ctry.message = "You almost got it right, Good Job!"
+                        else:
+                            self.ctry.message = "Sorry " + self.ctry.answer + " is not on my list"
+                        self.ctry.answer = ''
+                        answer_input = False
                     g.redraw = True
                     self.flush_queue()
                 elif event.type == pygame.KEYUP:

@@ -38,7 +38,7 @@ ver = '32'
 ver = '33'
 # countries.txt & latlon.txt rationalised
 # dash instead of minus
-
+YES = 121
 UP = (264, 273)
 DOWN = (258, 274)
 LEFT = (260, 276)

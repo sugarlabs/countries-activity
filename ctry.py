@@ -111,27 +111,48 @@ class Ctry:
     def try1(self):
         if len(self.answer) == 0:
             self.message = 'please type in a country'
-            return
+            return -1
         l = self.answer[:1]
         ind = ord(l) - 65
         answer_fix = fix(self.answer)
-        ans = self.check(answer_fix)
-        if ans is None:
+        value, ans = self.check(answer_fix)
+        if ans is None or value is None:
             self.message = 'sorry, ' + self.answer + ' is not in my list'
-            return
+            return -1
+        if value == 0:
+            self.message = 'Did you mean ' + ans + '? (y/n)'
+            return 0
         if g.answers[ind] != '':
             g.answers[ind] = ''
             self.redraw()
         g.answers[ind] = ans
+        # print(g.answers)
         self.flag(ans)
         text(l, answer_fix)
         self.answer = ''
+        return -1
 
     def check(self, ans):
+        flag = 0
         for lst in self.countries:
             if ans in lst:
-                return lst[0]
-        return None
+                flag = 1
+                return 1, lst[0]           
+        if flag == 0:
+            return self.check_similar(ans)
+
+    def check_similar(self, ans):
+        for lst in self.countries:
+            ctry_name = lst[0]
+            similar_count = 0
+            if len(ctry_name) != len(ans):
+                continue
+            for i in range(0, len(ctry_name)):
+                if(ctry_name[i] != ans[i]):
+                    similar_count += 1
+            if(similar_count == 1):
+                return 0, lst[0]
+        return None, None
 
     def get_ind(self, ans):
         ind = 0
