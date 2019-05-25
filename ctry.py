@@ -126,7 +126,6 @@ class Ctry:
             g.answers[ind] = ''
             self.redraw()
         g.answers[ind] = ans
-        # print(g.answers)
         self.flag(ans)
         text(l, answer_fix)
         self.answer = ''
@@ -150,7 +149,8 @@ class Ctry:
             for i in range(0, len(ans)):
                 if(ctry_name[i] != ans[i]):
                     similar_count += 1
-            if(similar_count == 1 or (similar_count == 2 and len(ans)>7) or (similar_count == 3 and len(ans)>14)):
+            if(similar_count == 1 or (similar_count == 2 and len(ans)>7) \
+                or (similar_count == 3 and len(ans)>14)):
                 return 0, lst[0]
         return -1, None
 

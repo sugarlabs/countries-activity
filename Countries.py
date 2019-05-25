@@ -250,7 +250,7 @@ class Countries:
                             ctry.text(l, answer_fix)
                             self.ctry.message = "You almost got it right, Good Job!"
                         else:
-                            self.ctry.message = "Sorry " + self.ctry.answer + " is not on my list"
+                            self.ctry.message = "Sorry, " + self.ctry.answer + " is not on my list"
                         self.ctry.answer = ''
                         answer_input = False
                     g.redraw = True
