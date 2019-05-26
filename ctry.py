@@ -22,6 +22,7 @@ class Ctry:
     def __init__(self):
         # oval letters
         self.azs = []
+        self.dup_countries = []
         s = g.sy(1.1)
         dx = g.xy0[0]
         dy = g.sy(.5)
@@ -56,6 +57,10 @@ class Ctry:
         self.setup()
         self.finished = False
         g.countries = self.countries
+        # Create another list of countries for easier comparision
+        for c in self.countries:
+            for w in c:
+                self.dup_countries.append(w)
 
     def setup(self):
         g.answers = [''] * 26
@@ -110,14 +115,14 @@ class Ctry:
 
     def try1(self):
         if len(self.answer) == 0:
-            self.message = 'please type in a country'
+            self.message = 'Please type in a country'
             return -1
         l = self.answer[:1]
         ind = ord(l) - 65
         answer_fix = fix(self.answer)
         value, ans = self.check(answer_fix)
         if ans is None or value == -1:
-            self.message = 'sorry, ' + self.answer + ' is not in my list'
+            self.message = 'Sorry, ' + self.answer + ' is not in my list'
             return -1
         if value == 0:
             self.message = 'Did you mean ' + ans + '? (y/n)'
@@ -125,6 +130,7 @@ class Ctry:
         if g.answers[ind] != '':
             g.answers[ind] = ''
             self.redraw()
+        self.message = "Correct, you got it right"
         g.answers[ind] = ans
         self.flag(ans)
         text(l, answer_fix)
@@ -142,35 +148,33 @@ class Ctry:
 
     def check_similar(self, ans):
         # REFERENCE:- https://norvig.com/spell-correct.html
-
         def edits_one(word):
             letters    = 'abcdefghijklmnopqrstuvwxyz '
             splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
             deletes    = [L + R[1:]               for L, R in splits if R]
-            # transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
             replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
             inserts    = [L + c + R               for L, R in splits for c in letters]
-            # return set(deletes + transposes + replaces + inserts)
-            return set(deletes + replaces + inserts)
+            return list(deletes + replaces + inserts)
 
         def edits_two(word):
             return (e2 for e1 in edits_one(word) for e2 in edits_one(e1))
 
         def referenced_countries(words):
-            match = set()
+            match = list()
             for w in words:
-                for e in g.countries:
-                    if(w == e[0]):
-                        match.add(w)
+                if(w in self.dup_countries):
+                    match.append(w)
             return match
 
         def possible_countries(word):
-            return (referenced_countries([word]) or referenced_countries(edits_one(word)) or referenced_countries(edits_two(word)) or [word])
+            return (referenced_countries([word]) or referenced_countries(edits_one(word)) or referenced_countries(edits_two(word)))
 
         def prediction(word):
             pred = possible_countries(word)
-            e = next(iter(pred))
-            return 0, e
+            if(len(pred) != 0):
+                return 0, pred[0]
+            else:
+                return -1, None
 
         return prediction(ans)
 
