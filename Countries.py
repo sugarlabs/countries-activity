@@ -248,7 +248,7 @@ class Countries:
                             g.answers[ind] = ans
                             self.ctry.flag(ans)
                             ctry.text(l, answer_fix)
-                            self.ctry.message = "Good job, check the correct spelling!"
+                            self.ctry.message = "Good job, " + ans + " is the right answer!"
                         else:
                             self.ctry.message = "Sorry, " + self.ctry.answer + " is not on my list"
                         self.ctry.answer = ''
