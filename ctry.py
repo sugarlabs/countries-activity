@@ -142,24 +142,24 @@ class Ctry:
         for lst in self.countries:
             if ans in lst:
                 flag = 1
-                return 1, lst[0]           
+                return 1, lst[0]
         if flag == 0:
             return self.check_similar(ans)
 
     def check_similar(self, ans):
         # REFERENCE:- https://norvig.com/spell-correct.html
         def edits_one(word):
-            letters    = 'abcdefghijklmnopqrstuvwxyz '
-            splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
-            deletes    = [L + R[1:]               for L, R in splits if R]
-            replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
-            inserts    = [L + c + R               for L, R in splits for c in letters]
+            letters = 'abcdefghijklmnopqrstuvwxyz '
+            splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]
+            deletes = [L + R[1:] for L, R in splits if R]
+            replaces = [L + c + R[1:] for L, R in splits if R for c in letters]
+            inserts = [L + c + R for L, R in splits for c in letters]
             return list(deletes + replaces + inserts)
 
         def edits_two(word):
             return (e2 for e1 in edits_one(word) for e2 in edits_one(e1))
 
-        def referenced_countries(words):
+        def ref_countries(words):
             match = list()
             for w in words:
                 if(w in self.dup_countries):
@@ -167,7 +167,8 @@ class Ctry:
             return match
 
         def possible_countries(word):
-            return (referenced_countries([word]) or referenced_countries(edits_one(word)) or referenced_countries(edits_two(word)))
+            return (ref_countries([word]) or ref_countries(edits_one(word))
+                   or ref_countries(edits_two(word)))
 
         def prediction(word):
             pred = possible_countries(word)

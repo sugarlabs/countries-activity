@@ -125,10 +125,10 @@ class Countries:
             l = letter_keys.which(key)
         if l is not None:
             self.ctry.do_letter(l)
-            return -1 
+            return -1
         if key == pygame.K_F1:
             self.pages_on()
-        
+
         return -1
 
     def buttons_setup(self):
@@ -206,7 +206,7 @@ class Countries:
                     self.ctry.message = None
                     g.pic = g.globe
                     if event.button == 1:
-                        if answer_input == False:
+                        if answer_input is False:
                             if self.do_click():
                                 pass
                             else:
@@ -216,7 +216,7 @@ class Countries:
                                     if value == 0:
                                         answer_input = True
                         else:
-                            pass # Don't accept any other kind of Button Event
+                            pass  # Don't accept any other kind of Button Event
                         self.flush_queue()
                     if event.button == 3:
                         self.ctry.clear()
@@ -232,7 +232,7 @@ class Countries:
                             break
                         else:
                             ctrl = False
-                    if answer_input == False:
+                    if answer_input is False:
                         if event.key in (pygame.K_LCTRL, pygame.K_RCTRL):
                             ctrl = True
                             break
@@ -240,7 +240,7 @@ class Countries:
                         if value == 0:
                             answer_input = True
                     else:
-                        if event.key == g.YES: # Value of 'y'
+                        if event.key == g.YES:  # Value of 'y'
                             answer_fix = ctry.fix(self.ctry.answer)
                             value, ans = self.ctry.check(answer_fix)
                             l = ans[:1]
@@ -248,9 +248,11 @@ class Countries:
                             g.answers[ind] = ans
                             self.ctry.flag(ans)
                             ctry.text(l, answer_fix)
-                            self.ctry.message = "Good job, " + ans + " is the right answer!"
+                            self.ctry.message = "Good job, " + \
+                                                ans + " is the right answer!"
                         else:
-                            self.ctry.message = "Sorry, " + self.ctry.answer + " is not on my list"
+                            self.ctry.message = "Sorry, " + self.ctry.answer +\
+                                                " is not on my list"
                         self.ctry.answer = ''
                         answer_input = False
                     g.redraw = True
