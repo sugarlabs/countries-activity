@@ -163,6 +163,17 @@ class Countries:
             for event in pygame.event.get():
                 flushing = True
 
+    def check_response(self):
+        answer_fix = ctry.fix(self.ctry.answer)
+        value, ans = self.ctry.check(answer_fix)
+        l = ans[:1]
+        ind = ord(l) - 65
+        g.answers[ind] = ans
+        self.ctry.flag(ans)
+        ctry.text(l, answer_fix)
+        self.ctry.message = "Good job, " + \
+                            ans + " is the right answer!"
+
     def run(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -216,7 +227,14 @@ class Countries:
                                     if value == 0:
                                         answer_input = True
                         else:
-                            pass  # Don't accept any other kind of Button Event
+                            res = self.ctry.which_oval()
+                            if res == 'y':
+                                self.check_response()
+                            else:
+                                self.ctry.message = "Sorry, " + self.ctry.answer +\
+                                                " is not on my list"
+                            self.ctry.answer = ''
+                            answer_input = False
                         self.flush_queue()
                     if event.button == 3:
                         self.ctry.clear()
@@ -241,15 +259,7 @@ class Countries:
                             answer_input = True
                     else:
                         if event.key == g.YES:  # Value of 'y'
-                            answer_fix = ctry.fix(self.ctry.answer)
-                            value, ans = self.ctry.check(answer_fix)
-                            l = ans[:1]
-                            ind = ord(l) - 65
-                            g.answers[ind] = ans
-                            self.ctry.flag(ans)
-                            ctry.text(l, answer_fix)
-                            self.ctry.message = "Good job, " + \
-                                                ans + " is the right answer!"
+                            self.check_response()
                         else:
                             self.ctry.message = "Sorry, " + self.ctry.answer +\
                                                 " is not on my list"
