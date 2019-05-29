@@ -162,6 +162,12 @@ class Countries:
             for event in pygame.event.get():
                 flushing = True
 
+    def proximity(self, up, down):
+        if(up.pos[0] <= (down.pos[0] + 30) and up.pos[0] >= (down.pos[0] - 30)):
+            if(up.pos[1] <= (down.pos[1] + 30) and up.pos[1] >= (down.pos[1] - 30)):
+                return True
+        return False
+
     def run(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -182,12 +188,12 @@ class Countries:
             self.canvas.grab_focus()
         ctrl = False
         going = True
+        down_event = None
         while going:
             if self.journal:
                 # Pump Gtk messages.
                 while Gtk.events_pending():
                     Gtk.main_iteration()
-
             # Pump PyGame messages.
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -200,16 +206,21 @@ class Countries:
                     if self.canvas is not None:
                         self.canvas.grab_focus()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
+                    # Store the latest MOUSEBUTTONDOWN event
+                    if event.button == 1:
+                        down_event = event
+                elif event.type == pygame.MOUSEBUTTONUP:
                     g.redraw = True
                     self.ctry.message = None
                     g.pic = g.globe
                     if event.button == 1:
-                        if self.do_click():
-                            pass
-                        else:
-                            bu = buttons.check()
-                            if bu != '':
-                                self.do_button(bu)
+                        if self.proximity(event, down_event):
+                            if self.do_click():
+                                pass
+                            else:
+                                bu = buttons.check()
+                                if bu != '':
+                                    self.do_button(bu)
                         self.flush_queue()
                     if event.button == 3:
                         self.ctry.clear()
