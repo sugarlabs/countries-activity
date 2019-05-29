@@ -163,10 +163,8 @@ class Countries:
                 flushing = True
 
     def proximity(self, up, down):
-        x_max, y_max = down.pos
-        x_min, y_min = down.pos
-        if(up.pos[0] <= (x_max + 30) and up.pos[0] >= (x_min - 30)):
-            if(up.pos[1] <= (y_max + 30) and up.pos[1] >= (y_min - 30)):
+        if(up.pos[0] <= (down.pos[0] + 30) and up.pos[0] >= (down.pos[0] - 30)):
+            if(up.pos[1] <= (down.pos[1] + 30) and up.pos[1] >= (down.pos[1] - 30)):
                 return True
         return False
 
