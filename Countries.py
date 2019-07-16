@@ -163,6 +163,7 @@ class Countries:
             for event in pygame.event.get():
                 flushing = True
 
+
     def check_response(self):
         answer_fix = ctry.fix(self.ctry.answer)
         value, ans = self.ctry.check(answer_fix)
@@ -173,6 +174,12 @@ class Countries:
         ctry.text(l, answer_fix)
         self.ctry.message = "Good job, " + \
                             ans + " is the right answer!"
+
+    def proximity(self, up, down):
+        if(up.pos[0] <= (down.pos[0] + 30) and up.pos[0] >= (down.pos[0] - 30)):
+            if(up.pos[1] <= (down.pos[1] + 30) and up.pos[1] >= (down.pos[1] - 30)):
+                return True
+        return False
 
     def run(self):
         for event in pygame.event.get():
@@ -195,12 +202,13 @@ class Countries:
         ctrl = False
         going = True
         answer_input = False
+        down_event = None
+
         while going:
             if self.journal:
                 # Pump Gtk messages.
                 while Gtk.events_pending():
                     Gtk.main_iteration()
-
             # Pump PyGame messages.
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -213,11 +221,15 @@ class Countries:
                     if self.canvas is not None:
                         self.canvas.grab_focus()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
+                    # Store the latest MOUSEBUTTONDOWN event
+                    if event.button == 1:
+                        down_event = event
+                elif event.type == pygame.MOUSEBUTTONUP:
                     g.redraw = True
                     self.ctry.message = None
                     g.pic = g.globe
                     if event.button == 1:
-                        if answer_input is False:
+                        if self.proximity(event, down_event) and answer_input is False:
                             if self.do_click():
                                 pass
                             else:
@@ -225,8 +237,8 @@ class Countries:
                                 if bu != '':
                                     value = self.do_button(bu)
                                     if value == 0:
-                                        answer_input = True
-                        else:
+                                        answer_input = True    
+                        elif self.proximity(event, down_event) and answer_input is True:
                             res = self.ctry.which_oval()
                             if res == 'y':
                                 self.check_response()
