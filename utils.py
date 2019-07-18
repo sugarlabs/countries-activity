@@ -3,6 +3,7 @@ import g
 import pygame
 import sys
 import os
+import utils
 import random
 import copy
 import load_save
@@ -198,9 +199,9 @@ def message1(screen, font, m, xxx_todo_changeme6, d=15):
     text = font.render(m, True, ORANGE)
     rect = text.get_rect()
     rect.centerx = cx
-    rect.centery = cy
+    rect.centery = cy * 1.45
     bgd = pygame.Surface((rect.width + 2 * d, rect.height + 2 * d))
-    bgd.fill(BLUE)
+    bgd.fill(utils.CREAM)
     screen.blit(bgd, (rect.left - d, rect.top - d))
     screen.blit(text, rect)
 
