@@ -78,8 +78,10 @@ class PeterActivity(activity.Activity):
                                  Gdk.Screen.height() - GRID_CELL_SIZE),
                                  pygame.RESIZABLE)
         g.init()
-        self.game.ctry = ctry.Ctry()
-        self.game.pages = pages.Pages()
-        self.game.map1 = map1.Map1()
+        self.game.ctry.rotate()
+        for country in g.answers:
+            if country != 'none' and country != '':
+                ch = country[0]
+                ctry.text(ch, country)
         buttons.deactive()
         self.game.buttons_setup()
