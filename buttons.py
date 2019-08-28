@@ -106,6 +106,9 @@ def active(name):
             return b.active  # ****
     return False  # not found
 
+def deactive():
+    for b in Button._instances:
+        b.off()
 
 def xy(name):
     for b in Button._instances:

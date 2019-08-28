@@ -36,8 +36,7 @@ class Countries:
         elif g.pages:
             self.pages.draw()
         else:
-            if g.offset > 0:
-                g.screen.fill(utils.CREAM)
+            g.screen.fill(utils.CREAM)
             g.screen.blit(g.bgd, g.xy0)
             utils.centre_blit(g.screen, g.pic, g.xyc)
             self.ctry.draw()

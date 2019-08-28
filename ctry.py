@@ -62,6 +62,13 @@ class Ctry:
             for w in c:
                 self.dup_countries.append(w)
 
+    def rotate(self):
+        self.cxy = (g.sx(16), g.sy(16))
+        self.message_c = (g.sx(16), g.sy(11))
+        g.bgd = utils.load_image('bgd.png', False)
+        g.pic = g.globe
+        self.clear()
+
     def setup(self):
         g.answers = [''] * 26
         g.bgd = utils.load_image('bgd.png', False)

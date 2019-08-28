@@ -5,14 +5,21 @@ from gettext import gettext as _
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+from gi.repository import Gdk
 import pygame
 from sugar3.activity import activity
 from sugar3.graphics.toolbarbox import ToolbarBox
 from sugar3.activity.widgets import ActivityToolbarButton
 from sugar3.activity.widgets import StopButton
+from sugar3.graphics.style import GRID_CELL_SIZE
 import sugargame.canvas
 import load_save
 import Countries
+import ctry
+import pages
+import map1
+import buttons
+import g
 
 
 class PeterActivity(activity.Activity):
@@ -49,6 +56,9 @@ class PeterActivity(activity.Activity):
         # read_file when resuming from the Journal.
         self.set_canvas(self._pygamecanvas)
 
+        Gdk.Screen.get_default().connect('size-changed',
+                                         self.__configure_cb)
+
     def read_file(self, file_path):
         try:
             f = open(file_path, 'r')
@@ -61,3 +71,17 @@ class PeterActivity(activity.Activity):
         f = open(file_path, 'w')
         load_save.save(f)
         f.close()
+
+    def __configure_cb(self, event):
+        ''' Screen size has changed '''
+        pygame.display.set_mode((Gdk.Screen.width(),
+                                 Gdk.Screen.height() - GRID_CELL_SIZE),
+                                 pygame.RESIZABLE)
+        g.init()
+        self.game.ctry.rotate()
+        for country in g.answers:
+            if country != 'none' and country != '':
+                ch = country[0]
+                ctry.text(ch, country)
+        buttons.deactive()
+        self.game.buttons_setup()
