@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # g.py - globals
 import pygame
 import utils
