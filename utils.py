@@ -72,7 +72,7 @@ def load_image(file1, alpha=False, subdir=''):  # eg subdir='glow'
     try:
         img = pygame.image.load(fname)
     except BaseException:
-        print "Peter says: Can't find " + fname
+        print("Peter says: Can't find " + fname)
         exit()
     if alpha:
         img = img.convert_alpha()
@@ -115,7 +115,7 @@ def centre_blit(screen, img, xxx_todo_changeme, angle=0):  # rotation is clockwi
     if angle != 0:
         img1 = pygame.transform.rotate(img, -angle)
     rect = img1.get_rect()
-    screen.blit(img1, (cx - rect.width / 2, cy - rect.height / 2))
+    screen.blit(img1, (cx - rect.width // 2, cy - rect.height // 2))
 
 
 def text_blit(
@@ -176,9 +176,9 @@ def message(screen, font, m, xxx_todo_changeme5=(0, 0), d=20):
             shadow = font.render(m, True, (0, 0, 0))
             rect = text.get_rect()
             if cx == 0:
-                cx = screen.get_width() / 2
+                cx = screen.get_width() // 2
             if cy == 0:
-                cy = screen.get_height() / 2
+                cy = screen.get_height() // 2
             rect.centerx = cx
             rect.centery = cy
             bgd = pygame.Surface((rect.width + 2 * d, rect.height + 2 * d))
@@ -236,8 +236,8 @@ def mouse_on_img1(img, xxx_todo_changeme8):
 
 def mouse_on_img_rect(img, xxx_todo_changeme9):
     (cx, cy) = xxx_todo_changeme9
-    w2 = img.get_width() / 2
-    h2 = img.get_height() / 2
+    w2 = img.get_width() // 2
+    h2 = img.get_height() // 2
     x1 = cx - w2
     y1 = cy - h2
     x2 = cx + w2
@@ -282,7 +282,7 @@ def display_score():
             g.screen,
             g.sparkle,
             (x - d + g.sy(.05),
-             y + h / 2 - g.sy(.2)))
+             y + h // 2 - g.sy(.2)))
 
 
 def display_number(
@@ -308,7 +308,7 @@ def display_number1(n, xxx_todo_changeme11, font, colour=BLACK):
     (x, cy) = xxx_todo_changeme11
     if pygame.font:
         text = font.render(str(n), True, colour)
-        y = cy - text.get_height() / 2
+        y = cy - text.get_height() // 2
         g.screen.blit(text, (x, y))
 
 
@@ -333,15 +333,15 @@ def display_number3(screen, n, xxx_todo_changeme13, font, colour=BLACK):
 
 def top_left_to_centre(img, xxx_todo_changeme14):
     (x, y) = xxx_todo_changeme14
-    cx = x + img.get_width() / 2
-    cy = y + img.get_height() / 2
+    cx = x + img.get_width() // 2
+    cy = y + img.get_height() // 2
     return (cx, cy)
 
 
 def centre_to_top_left(img, xxx_todo_changeme15):
     (cx, cy) = xxx_todo_changeme15
-    x = cx - img.get_width() / 2
-    y = cy - img.get_height() / 2
+    x = cx - img.get_width() // 2
+    y = cy - img.get_height() // 2
     return (x, y)
 
 
@@ -354,8 +354,8 @@ def sign(n):
 def avg(c1, c2):
     (x1, y1) = c1
     (x2, y2) = c2
-    x = (x1 + x2) / 2
-    y = (y1 + y2) / 2
+    x = (x1 + x2) // 2
+    y = (y1 + y2) // 2
     return (x, y)
 
 
