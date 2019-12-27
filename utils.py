@@ -109,8 +109,8 @@ def shuffle(lst):
     return lt
 
 
-def centre_blit(screen, img, position, angle=0):  # rotation is clockwise
-    (cx, cy) = position
+def centre_blit(screen, img, coordinates, angle=0):  # rotation is clockwise
+    (cx, cy) = coordinates
     img1 = img
     if angle != 0:
         img1 = pygame.transform.rotate(img, -angle)
@@ -122,10 +122,10 @@ def text_blit(
         screen,
         s,
         font,
-        position,
+        coordinates,
         color,
         shadow=True):
-    (cx, cy) = position
+    (cx, cy) = coordinates
     (r, g, b) = color
     if shadow:
         text = font.render(s, True, (0, 0, 0))
@@ -145,10 +145,10 @@ def text_blit1(
         screen,
         s,
         font,
-        position,
+        coordinates,
         color,
         shadow=True):
-    (x, y) = position
+    (x, y) = coordinates
     (r, g, b) = color
     if shadow:
         text = font.render(s, True, (0, 0, 0))
@@ -168,8 +168,8 @@ def text_blit1(
 # (cx,cy) = co-ords centre - (0,0) means use screen centre
 
 
-def message(screen, font, m, position=(0, 0), d=20):
-    (cx, cy) = position
+def message(screen, font, m, coordinates=(0, 0), d=20):
+    (cx, cy) = coordinates
     if m != '':
         if pygame.font:
             text = font.render(m, True, (255, 255, 255))
@@ -194,8 +194,8 @@ def message(screen, font, m, position=(0, 0), d=20):
             screen.blit(text, rect)
 
 
-def message1(screen, font, m, position, d=15):
-    (cx, cy) = position
+def message1(screen, font, m, coordinates, d=15):
+    (cx, cy) = coordinates
     text = font.render(m, True, ORANGE)
     rect = text.get_rect()
     rect.centerx = cx
@@ -206,8 +206,8 @@ def message1(screen, font, m, position, d=15):
     screen.blit(text, rect)
 
 
-def mouse_on_img(img, position):  # x,y=top left
-    (x, y) = position
+def mouse_on_img(img, coordinates):  # x,y=top left
+    (x, y) = coordinates
     w = img.get_width()
     h = img.get_height()
     mx, my = g.pos
@@ -228,14 +228,14 @@ def mouse_on_img(img, position):  # x,y=top left
     return True
 
 
-def mouse_on_img1(img, position):
-    (cx, cy) = position
+def mouse_on_img1(img, coordinates):
+    (cx, cy) = coordinates
     xy = centre_to_top_left(img, (cx, cy))
     return mouse_on_img(img, xy)
 
 
-def mouse_on_img_rect(img, position):
-    (cx, cy) = position
+def mouse_on_img_rect(img, coordinates):
+    (cx, cy) = coordinates
     w2 = img.get_width() // 2
     h2 = img.get_height() // 2
     x1 = cx - w2
@@ -287,12 +287,12 @@ def display_score():
 
 def display_number(
         n,
-        position,
+        coordinates,
         font,
         colour=BLACK,
         bgd=None,
         outline_font=None):
-    (cx, cy) = position
+    (cx, cy) = coordinates
     if pygame.font:
         if bgd is None:
             text = font.render(str(n), True, colour)
@@ -304,23 +304,23 @@ def display_number(
         centre_blit(g.screen, text, (cx, cy))
 
 
-def display_number1(n, position, font, colour=BLACK):
-    (x, cy) = position
+def display_number1(n, coordinates, font, colour=BLACK):
+    (x, cy) = coordinates
     if pygame.font:
         text = font.render(str(n), True, colour)
         y = cy - text.get_height() // 2
         g.screen.blit(text, (x, y))
 
 
-def display_number2(screen, n, position, font, colour=BLACK):
-    (cx, cy) = position
+def display_number2(screen, n, coordinates, font, colour=BLACK):
+    (cx, cy) = coordinates
     if pygame.font:
         text = font.render(str(n), True, colour)
         centre_blit(screen, text, (cx, cy))
 
 
-def display_number3(screen, n, position, font, colour=BLACK):
-    (x, y) = position
+def display_number3(screen, n, coordinates, font, colour=BLACK):
+    (x, y) = coordinates
     if pygame.font:
         lead = 0
         if n < 10:
@@ -331,15 +331,15 @@ def display_number3(screen, n, position, font, colour=BLACK):
         screen.blit(text, (lead + x, y))
 
 
-def top_left_to_centre(img, position):
-    (x, y) = position
+def top_left_to_centre(img, coordinates):
+    (x, y) = coordinates
     cx = x + img.get_width() // 2
     cy = y + img.get_height() // 2
     return (cx, cy)
 
 
-def centre_to_top_left(img, position):
-    (cx, cy) = position
+def centre_to_top_left(img, coordinates):
+    (cx, cy) = coordinates
     x = cx - img.get_width() // 2
     y = cy - img.get_height() // 2
     return (x, y)
