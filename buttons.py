@@ -11,11 +11,11 @@ class Button:
     def __init__(
             self,
             name,
-            xxx_todo_changeme,
+            coordinates,
             centre=True,
             caption=None,
             colour=None):
-        (x1, y1) = xxx_todo_changeme
+        (x1, y1) = coordinates
         self._instances.append(self)
         t = name
         if colour is not None:
