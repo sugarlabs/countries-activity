@@ -3,6 +3,7 @@ import utils
 import g
 import os
 import pygame
+from utils import generate_ellipse_points, CREAM
 
 # x centre, y bottom on 1200x900 screen
 letters_c = [(600, 86), (720, 96), (832, 127), (932, 177), (1011, 241), (1068, 318), (1096, 403), (1096, 489), (1068, 574), (1011, 651), (932, 715), (832, 765),
@@ -62,9 +63,22 @@ class Ctry:
             for w in c:
                 self.dup_countries.append(w)
 
+    def create_background(self):
+        g.bgd = pygame.Surface((g.w, g.h))
+        pygame.draw.rect(g.bgd, CREAM, pygame.Rect((0, 0), (g.w, g.h)))
+        coords = generate_ellipse_points(g.w // 2, g.h * 0.46, g.w * 0.35, g.h * 0.40)
+
+        for i, c in enumerate(coords):
+            alph = g.font2.render((chr(ord('a') + i)).capitalize(), True, (0, 0, 0))
+            a_rect = alph.get_rect()
+            alph = pygame.transform.scale(alph, (int(a_rect.w * 2), int(a_rect.h * 2)))
+            c[0] -= alph.get_rect().w // 2 + g.xy0[0]
+            c[1] -= alph.get_rect().h // 2 + g.xy0[1]
+            g.bgd.blit(alph, c)
+
     def setup(self):
         g.answers = [''] * 26
-        g.bgd = utils.load_image('bgd.png', False)
+        self.create_background()
         for ch in self.no:
             g.answers[ord(ch) - 65] = 'none'
             text(ch, 'none')
@@ -72,7 +86,7 @@ class Ctry:
         self.clear()
 
     def redraw(self):
-        g.bgd = utils.load_image('bgd.png', False)
+        self.create_background()
         for answer in g.answers:
             if answer not in ('', 'none'):
                 letter = answer[:1]

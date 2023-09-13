@@ -7,6 +7,7 @@ import utils
 import random
 import copy
 import load_save
+import math
 
 # constants
 RED, BLUE, GREEN, BLACK, WHITE = (
@@ -380,3 +381,14 @@ def initcap(s):
             space = True
         t += ch
     return t
+
+def generate_ellipse_points(center_x, center_y, a, b, num_points=26):
+    points = []
+
+    for i in range(num_points):
+        angle = (2 * math.pi * i) / num_points - math.pi / 2  # Start from the top
+        x = center_x + a * math.cos(angle)
+        y = center_y + b * math.sin(angle)
+        points.append([int(x), int(y)])
+
+    return points
