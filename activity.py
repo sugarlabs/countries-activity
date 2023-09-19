@@ -22,10 +22,12 @@ class PeterActivity(activity.Activity):
         # Create the game instance.
         self.game = Countries.Countries()
         self.game.canvas = sugargame.canvas.PygameCanvas(
-                                                         self, main=self.game.run,
-                                                         modules=[pygame.display,
-                                                                  pygame.font,
-                                                                  pygame.mixer])
+            self,
+            main=self.game.run,
+            modules=[pygame.display,
+                     pygame.font,
+                     pygame.mixer]
+        )
         self.set_canvas(self.game.canvas)
         self.game.canvas.grab_focus() 
 
