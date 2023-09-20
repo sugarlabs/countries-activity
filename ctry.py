@@ -3,7 +3,7 @@ import utils
 import g
 import os
 import pygame
-from utils import generate_ellipse_points, CREAM
+from utils import CREAM
 
 # x centre, y bottom on 1200x900 screen
 letters_c = [(600, 86), (720, 96), (832, 127), (932, 177), (1011, 241), (1068, 318), (1096, 403), (1096, 489), (1068, 574), (1011, 651), (932, 715), (832, 765),
@@ -66,9 +66,8 @@ class Ctry:
     def create_background(self):
         g.bgd = pygame.Surface((g.w, g.h))
         pygame.draw.rect(g.bgd, CREAM, pygame.Rect((0, 0), (g.w, g.h)))
-        coords = generate_ellipse_points(g.w // 2, g.h * 0.46, g.w * 0.35, g.h * 0.40)
 
-        for i, c in enumerate(coords):
+        for i, c in enumerate(g.letter_coords):
             alph = g.font2.render((chr(ord('a') + i)).capitalize(), True, (0, 0, 0))
             a_rect = alph.get_rect()
             alph = pygame.transform.scale(alph, (int(a_rect.w * 2), int(a_rect.h * 2)))

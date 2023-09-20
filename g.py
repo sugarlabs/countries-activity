@@ -4,6 +4,7 @@ import pygame
 import utils
 import random
 import ctry
+from utils import generate_ellipse_points
 
 app = 'Countries'
 ver = '1'
@@ -59,6 +60,7 @@ def init():  # called by run()
     global screen, w, h, font0, font1, font2, clock
     global factor, offset, imgf, message, version_display
     global pos, pointer
+    global letter_coords
     redraw = True
     version_display = False
     screen = pygame.display.get_surface()
@@ -66,6 +68,14 @@ def init():  # called by run()
     screen.fill(utils.CREAM)
     pygame.display.flip()
     w, h = screen.get_size()
+    
+    a_multiplier = 0.42
+
+    if w > 1200:
+        a_multiplier = 0.35
+
+    letter_coords = generate_ellipse_points(w // 2, h * 0.46, w * a_multiplier, h * 0.40)
+
     if float(w) / float(h) > 1.5:  # widescreen
         offset = (w - 4 * h // 3) // 2  # we assume 4:3 - centre on widescreen
     else:
