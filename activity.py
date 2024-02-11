@@ -19,6 +19,18 @@ class PeterActivity(activity.Activity):
     def __init__(self, handle):
         super(PeterActivity, self).__init__(handle)
 
+        # Create the game instance.
+        self.game = Countries.Countries()
+        self.game.canvas = sugargame.canvas.PygameCanvas(
+            self,
+            main=self.game.run,
+            modules=[pygame.display,
+                     pygame.font,
+                     pygame.mixer]
+        )
+        self.set_canvas(self.game.canvas)
+        self.game.canvas.grab_focus() 
+
         # Build the activity toolbar.
         toolbar_box = ToolbarBox()
         self.set_toolbar_box(toolbar_box)
@@ -38,16 +50,6 @@ class PeterActivity(activity.Activity):
         toolbar_box.toolbar.insert(stop_button, -1)
         stop_button.show()
         self.show_all()
-
-        # Create the game instance.
-        self.game = Countries.Countries()
-
-        # Build the Pygame canvas.
-        self.game.canvas = self._pygamecanvas = sugargame.canvas.PygameCanvas(
-            self, main=self.game.run, modules=[pygame.display, pygame.font])
-        # Note that set_canvas implicitly calls
-        # read_file when resuming from the Journal.
-        self.set_canvas(self._pygamecanvas)
 
     def read_file(self, file_path):
         try:
