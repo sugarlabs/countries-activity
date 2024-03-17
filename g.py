@@ -88,14 +88,14 @@ def init():  # called by run()
     pygame.mouse.set_visible(False)
 
     # this activity only
-    global answers, bgd, xy0, globe, xyc, pic, pages, countries, map1
+    global answers, bgd, xy0, globe, xyc, pic, pages, countries, map1, hint
     xy0 = (sx(0), sy(0))
     globe = utils.load_image('globe.png', True)
     xyc = (sx(16), sy(9))
     pages = False
     countries = None
     map1 = False
-
+    hint = False
 
 def sx(f):  # scale x function
     return int(f * factor + offset + .5)
