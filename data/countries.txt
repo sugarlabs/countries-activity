@@ -31,7 +31,7 @@ Burundi
 Cambodia
 Cameroon
 Canada
-Cape Verde
+Cabo Verde
 Central African Republic
 Chad
 Chile
@@ -42,7 +42,7 @@ Costa Rica
 Croatia
 Cuba
 Cyprus
-Czech Republic
+Czechia
 Democratic Republic of the Congo
 Denmark
 Djibouti
@@ -54,6 +54,7 @@ El Salvador
 England
 Eritrea
 Estonia
+Eswatini
 Ethiopia
 Fiji
 Finland
@@ -104,7 +105,7 @@ Liechtenstein
 Lithuania
 Luxembourg
 Macao
-Macedonia
+North Macedonia
 Madagascar
 Malawi
 Malaysia
@@ -177,7 +178,6 @@ Spain
 Sri Lanka
 Sudan
 Suriname
-Swaziland
 Sweden
 Switzerland
 Syria
@@ -192,6 +192,7 @@ Tonga
 Trinidad and Tobago
 Tunisia
 Turkey
+Türkiye
 Turkmenistan
 Tuvalu
 Uganda
