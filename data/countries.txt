@@ -27,7 +27,6 @@ Brazil
 Brunei
 Bulgaria
 Burkina Faso
-Burma
 Burundi
 Cambodia
 Cameroon
@@ -49,10 +48,8 @@ Denmark
 Djibouti
 Dominica
 Dominican Republic
-East Timor
 Ecuador
 Egypt
-Eire
 El Salvador
 England
 Eritrea
@@ -75,7 +72,6 @@ Guinea
 Guinea-Bissau
 Guyana
 Haiti
-Holland
 Honduras
 Hong Kong
 Hungary
@@ -120,7 +116,8 @@ Mauritania
 Mauritius
 Mayotte
 Mexico
-Micronesia,Federated States of Micronesia
+Micronesia
+Federated States of Micronesia
 Moldova
 Monaco
 Mongolia
@@ -137,6 +134,7 @@ Nicaragua
 Niger
 Nigeria
 North Korea
+Democratic People's Republic of Korea(DRPK)
 Norway
 Oman
 Pakistan
@@ -188,6 +186,7 @@ Tajikistan
 Tanzania
 Thailand
 The Gambia
+Timor-Leste
 Togo
 Tonga
 Trinidad and Tobago
@@ -207,6 +206,5 @@ Vatican City
 Venezuela
 Vietnam
 Yemen
-Zaire
 Zambia
 Zimbabwe
