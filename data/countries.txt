@@ -44,6 +44,7 @@ Cuba
 Cyprus
 Czechia
 Democratic Republic of the Congo
+Democratic People's Republic of Korea(DRPK)
 Denmark
 Djibouti
 Dominica
@@ -105,7 +106,6 @@ Liechtenstein
 Lithuania
 Luxembourg
 Macao
-North Macedonia
 Madagascar
 Malawi
 Malaysia
@@ -135,7 +135,7 @@ Nicaragua
 Niger
 Nigeria
 North Korea
-Democratic People's Republic of Korea(DRPK)
+North Macedonia
 Norway
 Oman
 Pakistan
