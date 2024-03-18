@@ -7,12 +7,13 @@ import utils
 class Hint:
     def __init__(self):
         self.img = None
-        self.cxy = (780, 150)
+        self.cxy = (g.sx(23), g.sy(5))
         self.ctry_idx = 0
         self.hint = ''
         self.ctry = ''
         self.text = 'Click Show button to get hint!'
-        self.textxy = (530,500)
+        self.textxy = (g.sx(17),g.sy(15))
+        self.flagxy = (g.sx(5),g.sy(2))
 
     def get_country(self):
         fname = os.path.join('data', 'countries.txt')
@@ -40,7 +41,7 @@ class Hint:
     def display(self):
         g.screen.fill((255,255,192))
         if(self.img):
-            g.screen.blit(self.img,(100,50))
+            g.screen.blit(self.img,self.flagxy)
         utils.text_blit(
             g.screen,
             self.hint,

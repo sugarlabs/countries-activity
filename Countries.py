@@ -34,7 +34,6 @@ class Countries:
         self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
         self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
         self.correct_ans_sound.set_volume(0.6)
-        self.hint = hint.Hint()
 
     def display(self):
         if g.map1:
@@ -162,7 +161,7 @@ class Countries:
                        caption='space', colour='yellow')
         buttons.Button('replay', (cx2, cy1), caption='replay', colour='yellow')
         buttons.Button('hint', (cx2 - g.sy(3), cy2), caption='hint', colour='yellow')
-        buttons.Button('show',(cx2 - g.sy(6), cy2 - g.sy(12)), caption = 'show', colour = 'yellow')
+        buttons.Button('show',(g.sx(23), cy2 - g.sy(12)), caption = 'show', colour = 'yellow')
         dx = g.sy(2.4)
         bx = g.sx(16) - dx
         by = g.sy(20.2)
@@ -219,6 +218,7 @@ class Countries:
         self.pages = pages.Pages()
         self.map1 = map1.Map1()
         self.ctry = ctry.Ctry()
+        self.hint = hint.Hint()
         load_save.retrieve()
         self.buttons_setup()
         if self.canvas is not None:
