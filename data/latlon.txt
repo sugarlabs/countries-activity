@@ -207,6 +207,5 @@ Vatican City,Vatican City,41.9,12.45
 Venezuela,Caracas,10.5,-66.917
 Vietnam,Hanoi,21.033,105.85
 Yemen,San'a',15.355,44.207
-Zaire,,,
 Zambia,Lusaka,-15.417,28.283
 Zimbabwe,Harare,-17.833,31.05
