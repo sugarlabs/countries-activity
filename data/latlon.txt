@@ -27,12 +27,11 @@ Brazil,Brasilia,-15.78333,-47.9
 Brunei,Bandar Seri Begawan,4.88333,114.93333
 Bulgaria,Sofia,42.683,23.317
 Burkina Faso,Ouagadougou,12.3572,-1.53528
-Burma,Naypyidaw,19.75,96.1
 Burundi,Bujumbura,-3.377,29.358
 Cambodia,Phnom Penh,11.55,104.917
 Cameroon,Yaounde,3.867,11.517
 Canada,Ottawa,45.417,-75.7
-Cape Verde,Praia,14.917,-23.517
+Cabo Verde,Praia,14.917,-23.517
 Central African Republic,Bangui,4.36667,18.58333
 Chad,N'Djamena,12.1,-15.05
 Chile,Santiago,-33.45,-70.667
@@ -43,20 +42,20 @@ Costa Rica,San Jose,9.933,-84.083
 Croatia,Zagreb,45.8,16
 Cuba,Havana,23.132,-82.364
 Cyprus,Nicosia,35.167,33.367
-Czech Republic,Prague,50.083,14.467
+Czechia,Prague,50.083,14.467
 Democratic Republic of the Congo,Kinshasa,-4.31667,15.31667
+Democratic People's Republic of Korea(DRPK),P'yongyang,39.0103,125.77
 Denmark,Copenhagen,55.71667,12.56667
 Djibouti,Djibouti,11.6,43.16667
 Dominica,Roseau,15.3,-61.4
 Dominican Republic,Santo Domingo,18.467,-69.9
-East Timor,Dili,-8.56667,125.56667
 Ecuador,Quito,-0.217,-78.5
 Egypt,Cairo,30.05,31.25
-Eire,Dublin,53.35,-6.26667
 El Salvador,San Salvador,13.7,-89.2
 England,London,51.5,-0.13333
 Eritrea,Asmara,15.333,38.933
 Estonia,Tallinn,59.434,24.728
+Eswatini,Mbabane,-26.317,31.133
 Ethiopia,Addis Ababa,9.033,38.7
 Fiji,Suva,-18.133,178.417
 Finland,Helsinki,60.176,24.934
@@ -75,7 +74,6 @@ Guinea,Conakry,9.511,-13.714
 Guinea-Bissau,Bissau,11.85,-15.56667
 Guyana,Georgetown,6.8,-58.16667
 Haiti,Port-au-Prince,18.53333,-72.33333
-Holland,Amsterdam,52.35,4.917
 Honduras,Tegucigalpa,14.08333,-87.21667
 Hong Kong,,22.28333,114.13333
 Hungary,Budapest,47.5,19.083
@@ -108,7 +106,6 @@ Liechtenstein,Vaduz,47.133,9.517
 Lithuania,Vilnius,54.683,25.317
 Luxembourg,Luxembourg,49.612,6.13
 Macao,,22.16667,113.55
-Macedonia,Skopje,42,21.43333
 Madagascar,Antananarivo,-18.917,47.517
 Malawi,Lilongwe,-13.983,33.783
 Malaysia,Kuala Lumpur,3.167,101.7
@@ -121,6 +118,7 @@ Mauritius,Port Louis,-20.1689,57.5133
 Mayotte,Mamoutzou,-12.78333,45.21667
 Mexico,Mexico City,19.05,-99.36667
 Micronesia,Palikir,6.91667,158.18333
+Federated States of Micronesia,Palikir,6.91667,158.18333
 Moldova,Chisinau,47.005,28.91667
 Monaco,Monaco,43.733,7.417
 Mongolia,Ulan Bator,47.917,106.917
@@ -137,6 +135,7 @@ Nicaragua,Managua,12.15,-86.283
 Niger,Niamey,13.517,2.117
 Nigeria,Abuja,9.06667,7.48333
 North Korea,P'yongyang,39.0103,125.77
+North Macedonia,Skopje,42,21.43333
 Norway,Oslo,59.917,10.75
 Oman,Muscat,23.6158,58.6044
 Pakistan,Islamabad,33.7,73.167
@@ -179,7 +178,6 @@ Spain,Madrid,40.38333,-3.71667
 Sri Lanka,Colombo,6.932,79.848
 Sudan,Khartoum,15.588,32.534
 Suriname,Paramaribo,5.833,-55.167
-Swaziland,Mbabane,-26.317,31.133
 Sweden,Stockholm,59.333,18.05
 Switzerland,Bern,46.917,7.467
 Syria,Damascus,33.5,36.3
@@ -188,11 +186,13 @@ Tajikistan,Dushanbe,38.53333,68.78333
 Tanzania,Dar es Salaam,-6.8,39.28333
 Thailand,Bangkok,13.75,100.517
 The Gambia,Banjul,13.45,-16.577
+Timor-Leste,Dili,-8.56667,125.56667
 Togo,Lome,6.132,1.223
 Tonga,Nuku'Alofa,-21.13333,-175.2
 Trinidad and Tobago,Port of Spain,10.66667,-61.51667
 Tunisia,Tunis,36.803,10.18
 Turkey,Ankara,39.933,32.867
+Türkiye,Ankara,39.933,32.867
 Turkmenistan,Ashgabat,37.95,58.383
 Tuvalu,Funafuti,-8.51667,179.21667
 Uganda,Kampala,0.317,32.583
