@@ -29,6 +29,7 @@ class Countries:
     def __init__(self):
         self.journal = True  # set to False if we come in via main()
         self.canvas = None  # set to the pygame canvas if we come in via activity.py
+        pygame.mixer.init()
         self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
         self.click_sound.set_volume(0.4)
         self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
@@ -176,7 +177,7 @@ class Countries:
         ind = ord(l) - 65
         g.answers[ind] = ans
         self.ctry.flag(ans)
-        ctry.text(l, answer_fix)
+        ctry.text(l, ans)
         self.ctry.message = "Good job, " + \
                             ans + " is the right answer!"
         self.correct_ans_sound.play()
