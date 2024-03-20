@@ -27,12 +27,11 @@ Brazil
 Brunei
 Bulgaria
 Burkina Faso
-Burma
 Burundi
 Cambodia
 Cameroon
 Canada
-Cape Verde
+Cabo Verde
 Central African Republic
 Chad
 Chile
@@ -43,20 +42,20 @@ Costa Rica
 Croatia
 Cuba
 Cyprus
-Czech Republic
+Czechia
 Democratic Republic of the Congo
+Democratic People's Republic of Korea(DRPK)
 Denmark
 Djibouti
 Dominica
 Dominican Republic
-East Timor
 Ecuador
 Egypt
-Eire
 El Salvador
 England
 Eritrea
 Estonia
+Eswatini
 Ethiopia
 Fiji
 Finland
@@ -75,7 +74,6 @@ Guinea
 Guinea-Bissau
 Guyana
 Haiti
-Holland
 Honduras
 Hong Kong
 Hungary
@@ -108,7 +106,6 @@ Liechtenstein
 Lithuania
 Luxembourg
 Macao
-Macedonia
 Madagascar
 Malawi
 Malaysia
@@ -120,7 +117,8 @@ Mauritania
 Mauritius
 Mayotte
 Mexico
-Micronesia,Federated States of Micronesia
+Micronesia
+Federated States of Micronesia
 Moldova
 Monaco
 Mongolia
@@ -137,6 +135,7 @@ Nicaragua
 Niger
 Nigeria
 North Korea
+North Macedonia
 Norway
 Oman
 Pakistan
@@ -179,7 +178,6 @@ Spain
 Sri Lanka
 Sudan
 Suriname
-Swaziland
 Sweden
 Switzerland
 Syria
@@ -188,11 +186,13 @@ Tajikistan
 Tanzania
 Thailand
 The Gambia
+Timor-Leste
 Togo
 Tonga
 Trinidad and Tobago
 Tunisia
 Turkey
+Türkiye
 Turkmenistan
 Tuvalu
 Uganda
@@ -207,6 +207,5 @@ Vatican City
 Venezuela
 Vietnam
 Yemen
-Zaire
 Zambia
 Zimbabwe
