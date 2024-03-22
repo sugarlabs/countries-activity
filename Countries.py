@@ -23,6 +23,8 @@ import ctry
 import letter_keys
 import pages
 import map1
+import hint
+
 
 class Countries:
 
@@ -40,6 +42,8 @@ class Countries:
             self.map1.draw()
         elif g.pages:
             self.pages.draw()
+        elif g.hint:
+            self.hint.display()
         else:
             if g.offset > 0:
                 g.screen.fill(utils.CREAM)
@@ -53,6 +57,8 @@ class Countries:
 
     def do_click(self):
         if g.map1:
+            return False
+        if g.hint:
             return False
         if g.pages:
             country = self.pages.which()
@@ -77,14 +83,14 @@ class Countries:
         g.pages = True
         g.map1 = False
         buttons.on('blue')
-        buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back'))
+        buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back', 'hint'))
 
     def map_on(self):
         g.map1 = True
         g.pages = False
         buttons.on('back')
         buttons.off(('fd', 'blue', 'bk'))
-        buttons.off(('clear', 'try', 'minus', 'space', 'replay'))
+        buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'hint'))
 
     def do_button(self, bu):
         if bu == 'back':
@@ -113,8 +119,17 @@ class Countries:
             return
         if bu == 'blue':
             g.pages = False
-            buttons.on(('clear', 'try', 'minus', 'space', 'replay'))
-            buttons.off(('fd', 'blue', 'bk'))
+            g.hint = False
+            buttons.on(('clear', 'try', 'minus', 'space', 'replay', 'hint'))
+            buttons.off(('fd', 'blue', 'bk', 'show'))
+        if bu == 'hint':
+            g.hint = True
+            g.map1 = False
+            g.pages = False
+            buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back', 'hint'))
+            buttons.on(('blue', 'show'))
+        if bu == 'show':
+            self.hint.get_country()
 
     def do_key(self, key):
         if key == pygame.K_1:
@@ -147,6 +162,8 @@ class Countries:
         buttons.Button('space', (cx1 + g.sy(3), cy2),
                        caption='space', colour='yellow')
         buttons.Button('replay', (cx2, cy1), caption='replay', colour='yellow')
+        buttons.Button('hint', (cx2 - g.sy(3), cy2), caption='hint', colour='yellow')
+        buttons.Button('show',(g.sx(23), cy2 - g.sy(12)), caption = 'show', colour = 'yellow')
         dx = g.sy(2.4)
         bx = g.sx(16) - dx
         by = g.sy(20.2)
@@ -156,7 +173,7 @@ class Countries:
         bx += dx
         buttons.Button('fd', (bx, by), True)
         buttons.Button('back', (g.sx(2), g.sy(18)), True)
-        buttons.off(('fd', 'blue', 'bk', 'back'))
+        buttons.off(('fd', 'blue', 'bk', 'back', 'show'))
 
     def flush_queue(self):
         flushing = True
@@ -203,6 +220,7 @@ class Countries:
         self.pages = pages.Pages()
         self.map1 = map1.Map1()
         self.ctry = ctry.Ctry()
+        self.hint = hint.Hint()
         load_save.retrieve()
         self.buttons_setup()
         if self.canvas is not None:
