@@ -24,6 +24,8 @@ import letter_keys
 import pages
 import map1
 import hint
+
+
 class Countries:
 
     def __init__(self):
@@ -81,14 +83,14 @@ class Countries:
         g.pages = True
         g.map1 = False
         buttons.on('blue')
-        buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back','hint'))
+        buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back', 'hint'))
 
     def map_on(self):
         g.map1 = True
         g.pages = False
         buttons.on('back')
         buttons.off(('fd', 'blue', 'bk'))
-        buttons.off(('clear', 'try', 'minus', 'space', 'replay','hint'))
+        buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'hint'))
 
     def do_button(self, bu):
         if bu == 'back':
@@ -118,14 +120,14 @@ class Countries:
         if bu == 'blue':
             g.pages = False
             g.hint = False
-            buttons.on(('clear', 'try', 'minus', 'space', 'replay','hint'))
-            buttons.off(('fd', 'blue', 'bk','show'))
+            buttons.on(('clear', 'try', 'minus', 'space', 'replay', 'hint'))
+            buttons.off(('fd', 'blue', 'bk', 'show'))
         if bu == 'hint':
             g.hint = True
             g.map1 = False
             g.pages = False
-            buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back','hint'))
-            buttons.on(('blue','show'))
+            buttons.off(('clear', 'try', 'minus', 'space', 'replay', 'back', 'hint'))
+            buttons.on(('blue', 'show'))
         if bu == 'show':
             self.hint.get_country()
 
@@ -171,7 +173,7 @@ class Countries:
         bx += dx
         buttons.Button('fd', (bx, by), True)
         buttons.Button('back', (g.sx(2), g.sy(18)), True)
-        buttons.off(('fd', 'blue', 'bk', 'back','show'))
+        buttons.off(('fd', 'blue', 'bk', 'back', 'show'))
 
     def flush_queue(self):
         flushing = True
