@@ -44,7 +44,7 @@ class PeterActivity(activity.Activity):
 
         # Build the Pygame canvas.
         self.game.canvas = self._pygamecanvas = sugargame.canvas.PygameCanvas(
-            self, main=self.game.run, modules=[pygame.display, pygame.font])
+            self, main=self.game.run, modules=[pygame.display, pygame.font, pygame.mixer])
         # Note that set_canvas implicitly calls
         # read_file when resuming from the Journal.
         self.set_canvas(self._pygamecanvas)
