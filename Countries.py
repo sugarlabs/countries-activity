@@ -29,11 +29,6 @@ class Countries:
     def __init__(self):
         self.journal = True  # set to False if we come in via main()
         self.canvas = None  # set to the pygame canvas if we come in via activity.py
-        self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
-        self.click_sound.set_volume(0.4)
-        self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
-        self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
-        self.correct_ans_sound.set_volume(0.6)
 
     def display(self):
         if g.map1:
@@ -176,7 +171,7 @@ class Countries:
         ind = ord(l) - 65
         g.answers[ind] = ans
         self.ctry.flag(ans)
-        ctry.text(l, answer_fix)
+        ctry.text(l, ans)
         self.ctry.message = "Good job, " + \
                             ans + " is the right answer!"
         self.correct_ans_sound.play()
@@ -190,6 +185,11 @@ class Countries:
     def run(self):
         pygame.mixer.music.load("data/sounds/theme.ogg")
         pygame.mixer.music.play(-1)
+        self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
+        self.click_sound.set_volume(0.4)
+        self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
+        self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
+        self.correct_ans_sound.set_volume(0.6)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
