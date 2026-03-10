@@ -29,7 +29,12 @@ class Countries:
     def __init__(self):
         self.journal = True  # set to False if we come in via main()
         self.canvas = None  # set to the pygame canvas if we come in via activity.py
-        self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
+        try:
+            if not pygame.mixer.get_init():
+                pygame.mixer.init()
+            self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
+        except pygame.error:
+            self.click_sound = None
         self.click_sound.set_volume(0.4)
         self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
         self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
@@ -230,7 +235,8 @@ class Countries:
                         self.canvas.grab_focus()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     # Store the latest MOUSEBUTTONDOWN event
-                    self.click_sound.play()
+                    if self.click_sound:
+                        self.click_sound.play()
                     if event.button == 1:
                         down_event = event
                 elif event.type == pygame.MOUSEBUTTONUP:
