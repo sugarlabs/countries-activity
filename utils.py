@@ -196,14 +196,38 @@ def message(screen, font, m, coordinates=(0, 0), d=20):
 
 def message1(screen, font, m, coordinates, d=15):
     (cx, cy) = coordinates
-    text = font.render(m, True, ORANGE)
-    rect = text.get_rect()
-    rect.centerx = cx
-    rect.centery = cy * 1.45
-    bgd = pygame.Surface((rect.width + 2 * d, rect.height + 2 * d))
-    bgd.fill(utils.CREAM)
-    screen.blit(bgd, (rect.left - d, rect.top - d))
-    screen.blit(text, rect)
+    y = int(cy * 1.45)
+
+    if "Fun fact:" in m:
+        parts = m.split("Fun fact:", 1)
+        line1 = parts[0].strip()
+        line2 = "Fun fact: " + parts[1].strip()
+
+        text1 = font.render(line1, True, ORANGE)
+        text2 = font.render(line2, True, RED)
+
+        width = max(text1.get_width(), text2.get_width())
+        height = text1.get_height() + text2.get_height() + 10
+
+        bgd = pygame.Surface((width + 2 * d, height + 2 * d))
+        bgd.fill(utils.CREAM)
+
+        x = cx - width // 2
+        top = y - height // 2
+
+        screen.blit(bgd, (x - d, top - d))
+        screen.blit(text1, (cx - text1.get_width() // 2, top))
+        screen.blit(text2, (cx - text2.get_width() // 2,
+                            top + text1.get_height() + 10))
+    else:
+        text = font.render(m, True, ORANGE)
+        rect = text.get_rect()
+        rect.centerx = cx
+        rect.centery = y
+        bgd = pygame.Surface((rect.width + 2 * d, rect.height + 2 * d))
+        bgd.fill(utils.CREAM)
+        screen.blit(bgd, (rect.left - d, rect.top - d))
+        screen.blit(text, rect)
 
 
 def mouse_on_img(img, coordinates):  # x,y=top left

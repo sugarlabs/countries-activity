@@ -49,6 +49,7 @@ class PeterActivity(activity.Activity):
         # Note that set_canvas implicitly calls
         # read_file when resuming from the Journal.
         self.set_canvas(self._pygamecanvas)
+        self.game.init_sound()
 
     def read_file(self, file_path):
         try:
