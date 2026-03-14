@@ -3,6 +3,7 @@ import utils
 import g
 import os
 import pygame
+import facts
 
 # x centre, y bottom on 1200x900 screen
 letters_c = [(600, 86), (720, 96), (832, 127), (932, 177), (1011, 241), (1068, 318), (1096, 403), (1096, 489), (1068, 574), (1011, 651), (932, 715), (832, 765),
@@ -140,7 +141,11 @@ class Ctry:
         if g.answers[ind] != '':
             g.answers[ind] = ''
             self.redraw()
-        self.message = "Correct, you got it right"
+        fact = facts.FACTS.get(ans, "")
+        if fact != "":
+            self.message = "Correct, you got it right. " + fact
+        else:
+            self.message = "Correct, you got it right"
         if self.correct_ans_sound is not None:
             self.correct_ans_sound.play()
         g.answers[ind] = ans

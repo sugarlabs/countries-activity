@@ -23,6 +23,7 @@ import ctry
 import letter_keys
 import pages
 import map1
+import facts
 
 class Countries:
 
@@ -187,8 +188,11 @@ class Countries:
         g.answers[ind] = ans
         self.ctry.flag(ans)
         ctry.text(l, answer_fix)
-        self.ctry.message = "Good job, " + \
-                            ans + " is the right answer!"
+        fact = facts.FACTS.get(ans, "")
+        if fact != "":
+            self.ctry.message = "Good job, " + ans + " is the right answer! " + fact
+        else:
+            self.ctry.message = "Good job, " + ans + " is the right answer!"
         if self.correct_ans_sound is not None:
             self.correct_ans_sound.play()
 
