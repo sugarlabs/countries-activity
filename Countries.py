@@ -29,11 +29,21 @@ class Countries:
     def __init__(self):
         self.journal = True  # set to False if we come in via main()
         self.canvas = None  # set to the pygame canvas if we come in via activity.py
-        self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
-        self.click_sound.set_volume(0.4)
-        self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
-        self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
-        self.correct_ans_sound.set_volume(0.6)
+        self.click_sound = None
+        self.correct_ans_sound = None
+        self.wrong_ans_sound = None
+    
+    def init_sound(self):
+        try:
+            self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
+            self.click_sound.set_volume(0.4)
+            self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
+            self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
+            self.correct_ans_sound.set_volume(0.6)
+        except pygame.error:
+            self.click_sound = None
+            self.correct_ans_sound = None
+            self.wrong_ans_sound = None
 
     def display(self):
         if g.map1:
@@ -179,7 +189,8 @@ class Countries:
         ctry.text(l, answer_fix)
         self.ctry.message = "Good job, " + \
                             ans + " is the right answer!"
-        self.correct_ans_sound.play()
+        if self.correct_ans_sound is not None:
+            self.correct_ans_sound.play()
 
     def proximity(self, up, down):
         if(up.pos[0] <= (down.pos[0] + 30) and up.pos[0] >= (down.pos[0] - 30)):
@@ -188,8 +199,11 @@ class Countries:
         return False
 
     def run(self):
-        pygame.mixer.music.load("data/sounds/theme.ogg")
-        pygame.mixer.music.play(-1)
+        try:
+            pygame.mixer.music.load("data/sounds/theme.ogg")
+            pygame.mixer.music.play(-1)
+        except pygame.error:
+            pass
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -230,7 +244,8 @@ class Countries:
                         self.canvas.grab_focus()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     # Store the latest MOUSEBUTTONDOWN event
-                    self.click_sound.play()
+                    if self.click_sound is not None:
+                        self.click_sound.play()
                     if event.button == 1:
                         down_event = event
                 elif event.type == pygame.MOUSEBUTTONUP:
@@ -285,7 +300,8 @@ class Countries:
                             
                             self.ctry.message = "Sorry, " + self.ctry.answer +\
                                                 " is not on my list"
-                            self.wrong_ans_sound.play()
+                            if self.wrong_ans_sound is not None:
+                                self.wrong_ans_sound.play()
                         self.ctry.answer = ''
                         answer_input = False
                     g.redraw = True

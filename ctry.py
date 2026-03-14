@@ -62,8 +62,12 @@ class Ctry:
             for w in c:
                 self.dup_countries.append(w)
         
-        self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
-        self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
+        try:
+            self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
+            self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
+        except pygame.error:
+            self.correct_ans_sound = None
+            self.wrong_ans_sound = None
 
 
     def setup(self):
@@ -127,7 +131,8 @@ class Ctry:
         value, ans = self.check(answer_fix)
         if ans is None or value == -1:
             self.message = 'Sorry, ' + self.answer + ' is not in my list'
-            self.wrong_ans_sound.play()
+            if self.wrong_ans_sound is not None:
+                self.wrong_ans_sound.play()
             return -1
         if value == 0:
             self.message = 'Did you mean ' + ans + '? (y/n)'
@@ -136,7 +141,8 @@ class Ctry:
             g.answers[ind] = ''
             self.redraw()
         self.message = "Correct, you got it right"
-        self.correct_ans_sound.play()
+        if self.correct_ans_sound is not None:
+            self.correct_ans_sound.play()
         g.answers[ind] = ans
         self.flag(ans)
         text(l, answer_fix)
