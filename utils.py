@@ -3,9 +3,7 @@ import g
 import pygame
 import sys
 import os
-import utils
 import random
-import copy
 import load_save
 
 # constants
@@ -23,32 +21,45 @@ def exit():
     sys.exit()
 
 
+def _get_data_dir():
+    """Return a user-writable directory for saving game data.
+
+    When running inside Sugar, SUGAR_ACTIVITY_ROOT points to a per-activity
+    user-writable root; data is stored in its ``data/`` sub-directory.
+    When running standalone (e.g. for development) fall back to
+    ``~/.local/share/countries-activity/`` so we never attempt to write
+    into the read-only activity bundle directory (fixes issue #29).
+    """
+    sugar_root = os.environ.get('SUGAR_ACTIVITY_ROOT')
+    if sugar_root:
+        data_dir = os.path.join(sugar_root, 'data')
+    else:
+        xdg_data = os.environ.get(
+            'XDG_DATA_HOME',
+            os.path.join(os.path.expanduser('~'), '.local', 'share'))
+        data_dir = os.path.join(xdg_data, 'countries-activity')
+    os.makedirs(data_dir, exist_ok=True)
+    return data_dir
+
+
 def save():
-    dir = ''
-    dir = os.environ.get('SUGAR_ACTIVITY_ROOT')
-    if dir is None:
-        dir = ''
-    fname = os.path.join(dir, 'data', 'Countries.dat')
-    f = open(fname, 'w')
-    load_save.save(f)
-    f.close
+    fname = os.path.join(_get_data_dir(), 'Countries.dat')
+    with open(fname, 'w') as f:
+        load_save.save(f)
 
 
 def load():
-    dir = ''
-    dir = os.environ.get('SUGAR_ACTIVITY_ROOT')
-    if dir is None:
-        dir = ''
-    fname = os.path.join(dir, 'data', 'Countries.dat')
+    fname = os.path.join(_get_data_dir(), 'Countries.dat')
     try:
         f = open(fname, 'r')
-    except BaseException:
-        return None  # ****
+    except OSError:
+        return None
     try:
         load_save.load(f)
-    except BaseException:
+    except Exception:
         pass
-    f.close
+    finally:
+        f.close()
 
 
 def version_display():
@@ -201,7 +212,7 @@ def message1(screen, font, m, coordinates, d=15):
     rect.centerx = cx
     rect.centery = cy * 1.45
     bgd = pygame.Surface((rect.width + 2 * d, rect.height + 2 * d))
-    bgd.fill(utils.CREAM)
+    bgd.fill(CREAM)
     screen.blit(bgd, (rect.left - d, rect.top - d))
     screen.blit(text, rect)
 

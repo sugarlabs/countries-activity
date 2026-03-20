@@ -29,11 +29,9 @@ class Countries:
     def __init__(self):
         self.journal = True  # set to False if we come in via main()
         self.canvas = None  # set to the pygame canvas if we come in via activity.py
-        self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
-        self.click_sound.set_volume(0.4)
-        self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
-        self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
-        self.correct_ans_sound.set_volume(0.6)
+        self.click_sound = None
+        self.correct_ans_sound = None
+        self.wrong_ans_sound = None
 
     def display(self):
         if g.map1:
@@ -172,6 +170,10 @@ class Countries:
     def check_response(self):
         answer_fix = ctry.fix(self.ctry.answer)
         value, ans = self.ctry.check(answer_fix)
+        if ans is None or value == -1:
+            self.ctry.message = "Sorry, " + self.ctry.answer + " is not on my list"
+            self.wrong_ans_sound.play()
+            return
         l = ans[:1]
         ind = ord(l) - 65
         g.answers[ind] = ans
@@ -190,6 +192,22 @@ class Countries:
     def run(self):
         pygame.mixer.music.load("data/sounds/theme.ogg")
         pygame.mixer.music.play(-1)
+
+        # Load sounds here — mixer is guaranteed to be initialised by now
+        try:
+            self.click_sound = pygame.mixer.Sound("data/sounds/clicksound.ogg")
+            self.click_sound.set_volume(0.4)
+            self.correct_ans_sound = pygame.mixer.Sound("data/sounds/correctans.ogg")
+            self.correct_ans_sound.set_volume(0.6)
+            self.wrong_ans_sound = pygame.mixer.Sound("data/sounds/wrongans.ogg")
+        except pygame.error:
+            # No audio device — create silent stubs so .play() calls don't crash
+            class _SilentSound:
+                def play(self): pass
+                def set_volume(self, v): pass
+            self.click_sound = _SilentSound()
+            self.correct_ans_sound = _SilentSound()
+            self.wrong_ans_sound = _SilentSound()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -238,7 +256,7 @@ class Countries:
                     self.ctry.message = None
                     g.pic = g.globe
                     if event.button == 1:
-                        if self.proximity(event, down_event) and answer_input is False:
+                        if down_event is not None and self.proximity(event, down_event) and answer_input is False:
                             if self.do_click():
                                 pass
                             else:
@@ -247,7 +265,7 @@ class Countries:
                                     value = self.do_button(bu)
                                     if value == 0:
                                         answer_input = True    
-                        elif self.proximity(event, down_event) and answer_input is True:
+                        elif down_event is not None and self.proximity(event, down_event) and answer_input is True:
                             res = self.ctry.which_oval()
                             if res == 'y':
                                 self.check_response()
